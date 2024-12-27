@@ -1,100 +1,92 @@
-import Image from "next/image";
+"use client";
+import { ChevronRight, Info } from "lucide-react";
+import { motion, useScroll, useTransform } from "motion/react";
+import Link from "next/link";
+import { useRef } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const textRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: textRef,
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-60, 60]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="w-full h-screen">
+      <nav className="fixed z-10 top-0 left-0 w-full flex items-center justify-between backdrop-blur-2xl px-6 py-6">
+        <Link href="/" className="font-bold text-sm text-neutral-300">
+          Ediga-Oya Rays Of Hope Foundation
+        </Link>
+      </nav>
+      <div className="w-full h-screen flex items-center justify-start px-6">
+        <motion.div
+          style={{ y }}
+          ref={textRef}
+          className="space-y-2 w-4/6 h-full flex flex-col items-start justify-center"
+        >
+          <motion.h1 className="text-7xl font-extrabold">Ediga-Oya</motion.h1>
+          <motion.h1 className="text-5xl font-bold">
+            Rays of Hope Foundation
+          </motion.h1>
+          <motion.h1 className="text-2xl font-medium text-neutral-500">
+            building futures for children in egbologba
+          </motion.h1>
+          <div className="flex items-center py-6 justify-start space-x-3">
+            <Link
+              href="/support-us"
+              className="bg-neutral-900 border-[1px] border-solid border-neutral-700 text-green-100 px-6 py-3 rounded-full flex items-center justify-center space-x-3"
+            >
+              <p>Learn More</p>
+              <Info size={14} />
+            </Link>
+            <Link
+              href="/support-us"
+              className="bg-green-900 border-[1px] border-solid border-green-700 text-green-100 px-6 py-3 rounded-full flex items-center justify-center space-x-2"
+            >
+              <p>Support Us</p>
+              <ChevronRight size={18} />
+            </Link>
+          </div>
+        </motion.div>
+        <motion.div className="w-2/6 h-full flex flex-col items-end justify-center px-6">
+          <motion.img
+            style={{
+              transform: "rotateZ(1.4deg)",
+            }}
+            ref={imageRef}
+            className="rounded-lg shadow-xl shadow-neutral-900/80 w-full h-4/6 object-cover border-[1px] border-solid border-neutral-800"
+            src="https://images.unsplash.com/photo-1497375638960-ca368c7231e4?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+        </motion.div>
+      </div>
+      <div className="w-full h-[120vh] py-[6rem] space-y-5 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-center text-5xl font-extrabold">The Gallery</h1>
+          <p className="text-center font-medium text-neutral-500 text-2xl">
+            our best moments over the years
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.div className="w-full h-3/6 bg-green-700 overflow-hidden"></motion.div>
+        <motion.div className="w-full h-3/6 bg-blue-700 overflow-hidden"></motion.div>
+        <Link
+          href="/gallery"
+          className="bg-green-900 text-green-100 flex items-center justify-center space-x-3 rounded-full px-6 py-3 border-[1px] border-solid border-green-800"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <p>See More</p>
+          <ChevronRight size={16} />
+        </Link>
+      </div>
+      <div className="w-full h-screen py-[5rem] space-y-5 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-5xl font-extrabold">The Team</h1>
+          <p className="text-neutral-500 font-medium text-2xl">
+            The people who make it work
+          </p>
+        </div>
+      </div>
+      <footer className="w-full h-[70vh] bg-neutral-200 text-black px-8 py-7">
+        footer
       </footer>
     </div>
   );
