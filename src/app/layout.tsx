@@ -1,12 +1,14 @@
-import { Theme } from "@radix-ui/themes";
+import { Button, Flex, Text, Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import local from "next/font/local";
+import Link from "next/link";
 import "./globals.css";
 
-const grotesque = Bricolage_Grotesque({
+const grotesque = local({
+  src: "../assets/fonts/bricolage.ttf",
   variable: "--font-bricolage",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -21,14 +23,49 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${grotesque.variable} antialiased`}>
+      <body
+        className={`${grotesque.variable} antialiased font-[family-name:var(--font-bricolage)]`}
+      >
         <Theme
           accentColor="bronze"
           appearance="light"
           grayColor="sand"
           radius="medium"
         >
-          {children}
+          <Flex direction="column" gap="4" width="100%" className="p-10">
+            <Flex align="center" justify="between" width="100%">
+              <Flex align="center" justify="start" gap="5">
+                <Link href="/">
+                  <Text size="5" weight="medium">
+                    EdigaOyaRaysOfHope
+                  </Text>
+                </Link>
+                <Flex align="center" justify="end" gap="3">
+                  <Link href="/about" className="text-slate-500">
+                    <Text size="2">About Us</Text>
+                  </Link>
+                  <Link href="/team" className="text-slate-500">
+                    <Text size="2">The Team</Text>
+                  </Link>
+                  <Link href="/get-involved" className="text-slate-500">
+                    <Text size="2">Get Involved</Text>
+                  </Link>
+                  <Link href="/contact" className="text-slate-500">
+                    <Text size="2">Contact Us</Text>
+                  </Link>
+                </Flex>
+              </Flex>
+              <Button asChild radius="full" color="brown" variant="soft">
+                <Link href="/donate">
+                  <Flex align="center" justify="center" gap="2">
+                    <Text size="2">Donate Now</Text>
+                    <ArrowRight size={12} />
+                  </Flex>
+                </Link>
+              </Button>
+            </Flex>
+            {children}
+          </Flex>
         </Theme>
       </body>
     </html>

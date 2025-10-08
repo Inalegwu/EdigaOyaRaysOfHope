@@ -1,49 +1,12 @@
-import { Button, Flex, Heading, Text } from "@radix-ui/themes";
+import todlympics from "@/assets/images/12 1.png";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import { ArrowRight, DollarSign, Library, Users } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <Flex direction="column" width="100%" className="h-screen p-10" gap="4">
-      <Flex align="center" justify="between" width="100%">
-        <Flex align="center" justify="start" gap="5">
-          <Link href="/">
-            <Text size="3" weight="medium">
-              EdigaOyaRaysOfHope
-            </Text>
-          </Link>
-          <Flex align="center" justify="end" gap="3">
-            <Link href="/about">
-              <Text size="2" color="gray">
-                About
-              </Text>
-            </Link>
-            <Link href="/about">
-              <Text size="2" color="gray">
-                The Team
-              </Text>
-            </Link>
-            <Link href="/about">
-              <Text size="2" color="gray">
-                Get Involved
-              </Text>
-            </Link>
-            <Link href="/about">
-              <Text size="2" color="gray">
-                Contact Us
-              </Text>
-            </Link>
-          </Flex>
-        </Flex>
-        <Button asChild radius="full" color="brown" variant="soft">
-          <Link href="/donate">
-            <Flex align="center" justify="center" gap="2">
-              <Text size="2">Donate Now</Text>
-              <ArrowRight size={12} />
-            </Flex>
-          </Link>
-        </Button>
-      </Flex>
+    <Flex direction="column" width="100%" gap="4">
       <Flex width="100%" flexGrow="1">
         <Flex
           width="50%"
@@ -99,9 +62,9 @@ export default function Home() {
           </Flex>
           <Link
             href="/donate"
-            className="rounded-full p-2 bg-orange-800/10 flex items-center justify-between space-x-2"
+            className="rounded-full p-2 text-white bg-orange-800/10 flex items-center justify-between space-x-2"
           >
-            <Text size="2" weight="regular">
+            <Text size="1" className="text-orange-800" weight="regular">
               Donate now
             </Text>
             <span className="p-2 rounded-full bg-orange-900">
@@ -109,7 +72,13 @@ export default function Home() {
             </span>
           </Link>
         </Flex>
-        <Flex align="center" justify="center" width="50%"></Flex>
+        <Flex align="center" justify="center" width="50%" className="p-5">
+          <Image
+            src={todlympics}
+            alt="todlympics 2020"
+            className="w-[90vh] h-full rounded-xl"
+          />
+        </Flex>
       </Flex>
     </Flex>
   );
