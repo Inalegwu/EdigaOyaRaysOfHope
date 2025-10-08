@@ -62,9 +62,9 @@ export default function Home() {
           </Flex>
           <Link
             href="/donate"
-            className="rounded-full p-2 text-white bg-orange-800/10 flex items-center justify-between space-x-2"
+            className="rounded-full p-1 text-white bg-orange-800/10 flex items-center justify-between space-x-2"
           >
-            <Text size="1" className="text-orange-800" weight="regular">
+            <Text size="2" className="text-orange-800 ml-2" weight="regular">
               Donate now
             </Text>
             <span className="p-2 rounded-full bg-orange-900">
