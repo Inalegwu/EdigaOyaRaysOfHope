@@ -23,9 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${grotesque.variable} antialiased font-bricolage`}>
+      <body className={`${grotesque.variable} antialiased`}>
         <Theme
-          accentColor="bronze"
+          accentColor="grass"
           appearance="light"
           grayColor="sand"
           radius="medium"
@@ -34,7 +34,7 @@ export default function RootLayout({
             direction="column"
             gap="4"
             width="100%"
-            className="p-10 bg-neutral-100"
+            className="p-10 bg-neutral-50 font-bricolage"
           >
             <Flex align="center" justify="between" width="100%">
               <Flex align="center" justify="start" gap="5">
@@ -46,32 +46,35 @@ export default function RootLayout({
                 <Flex align="center" justify="end" gap="3">
                   <Link
                     href="/about"
-                    className="text-neutral-500 hover:text-neutral-900"
+                    className="text-neutral-500 hover:text-green-900"
                   >
                     <Text size="2">About Us</Text>
                   </Link>
-                  <Link href="/team" className="text-slate-500">
+                  <Link
+                    href="/team"
+                    className="text-neutral-500 hover:text-green-900"
+                  >
                     <Text size="2">The Team</Text>
                   </Link>
                   <Link
                     href="/get-involved"
-                    className="text-neutral-500 hover:text-neutral-900"
+                    className="text-neutral-500 hover:text-green-900"
                   >
                     <Text size="2">Get Involved</Text>
                   </Link>
                   <Link
                     href="/contact"
-                    className="text-neutral-500 hover:text-neutral-900"
+                    className="text-neutral-500 hover:text-green-900"
                   >
                     <Text size="2">Contact Us</Text>
                   </Link>
                 </Flex>
               </Flex>
-              <Button asChild radius="full" color="brown" variant="soft">
+              <Button asChild radius="full" variant="soft">
                 <Link href="/donate">
                   <Flex align="center" justify="center" gap="2">
                     <Text size="2">Donate Now</Text>
-                    <ArrowRight size={12} />
+                    <ArrowRight size={13} />
                   </Flex>
                 </Link>
               </Button>

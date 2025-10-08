@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <Flex
       width="100%"
-      className="h-screen"
+      className="h-[79vh]"
       align="center"
       justify="center"
       gap="7"

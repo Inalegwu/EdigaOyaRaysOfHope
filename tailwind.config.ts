@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        bricolage: "var(--font-bricolage)",
+        bricolage: ["var(--font-bricolage)"],
       },
     },
   },

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <Flex direction="column" width="100%" gap="4">
+    <Flex direction="column" width="100%" className="h-[79vh]" gap="4">
       <Flex width="100%" flexGrow="1" justify="between">
         <Flex
           width="60%"
@@ -18,7 +18,7 @@ export default function Home() {
           <Flex direction="column" align="start" justify="center" gap="2">
             <Heading size="9" className="w-[100%]">
               Ediga-Oya Rays of Hope, Building better{" "}
-              <Text color="brown" as="span" className="italic">
+              <Text color="grass" as="span" className="italic">
                 futures
               </Text>
             </Heading>
@@ -29,7 +29,7 @@ export default function Home() {
           </Flex>
           <Flex direction="column" gap="4" className="my-3">
             <Flex align="center" gap="3" justify="start">
-              <span className="p-3 text-orange-800 rounded-full bg-orange-800/10 flex items-center justify-center">
+              <span className="p-3 text-green-800 rounded-full bg-green-800/10 flex items-center justify-center">
                 <Users size={18} />
               </span>
               <Flex direction="column">
@@ -40,7 +40,7 @@ export default function Home() {
               </Flex>
             </Flex>
             <Flex align="center" gap="3" justify="start">
-              <span className="p-3 text-orange-800 rounded-full bg-orange-800/10 flex items-center justify-center">
+              <span className="p-3 text-green-800 rounded-full bg-green-800/10 flex items-center justify-center">
                 <DollarSign size={18} />
               </span>
               <Flex direction="column">
@@ -51,7 +51,7 @@ export default function Home() {
               </Flex>
             </Flex>
             <Flex align="center" gap="3" justify="start">
-              <span className="p-3 text-orange-800 rounded-full bg-orange-800/10 flex items-center justify-center">
+              <span className="p-3 text-green-800 rounded-full bg-green-800/10 flex items-center justify-center">
                 <Library size={18} />
               </span>
               <Flex direction="column">
@@ -64,12 +64,12 @@ export default function Home() {
           </Flex>
           <Link
             href="/donate"
-            className="rounded-full p-1 text-white bg-orange-800/10 flex items-center justify-between space-x-2"
+            className="rounded-full p-1 my-2 text-white bg-green-800/10 flex items-center justify-between space-x-2"
           >
-            <Text size="2" className="text-orange-800 ml-2" weight="regular">
+            <Text size="2" className="text-green-800 ml-3" weight="regular">
               Donate now
             </Text>
-            <span className="p-2 rounded-full bg-orange-900">
+            <span className="p-2 rounded-full bg-green-900">
               <ArrowRight size={12} />
             </span>
           </Link>
