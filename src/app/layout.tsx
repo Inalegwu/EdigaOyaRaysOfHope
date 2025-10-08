@@ -34,7 +34,7 @@ export default function RootLayout({
             direction="column"
             gap="4"
             width="100%"
-            className="p-10 bg-neutral-50 font-bricolage"
+            className="p-10 bg-neutral-50 font-bricolage relative"
           >
             <Flex align="center" justify="between" width="100%">
               <Flex align="center" justify="start" gap="5">
@@ -80,6 +80,15 @@ export default function RootLayout({
               </Button>
             </Flex>
             {children}
+            <Flex className="absolute z-10 p-2 bottom-0 left-2" width="50%">
+              <Link
+                className="text-sm text-neutral-400"
+                target="_blank"
+                href="https://ikwueinalegwu.vercel.app"
+              >
+                Designed and Developed by DisgruntledDev
+              </Link>
+            </Flex>
           </Flex>
         </Theme>
       </body>
