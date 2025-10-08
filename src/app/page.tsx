@@ -1,4 +1,4 @@
-import todlympics from "@/assets/images/12 1.png";
+import toddlympics from "@/assets/images/12 1.png";
 import { Flex, Heading, Text } from "@radix-ui/themes";
 import { ArrowRight, DollarSign, Library, Users } from "lucide-react";
 import Image from "next/image";
@@ -7,9 +7,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <Flex direction="column" width="100%" gap="4">
-      <Flex width="100%" flexGrow="1">
+      <Flex width="100%" flexGrow="1" justify="between">
         <Flex
-          width="50%"
+          width="60%"
           gap="3"
           direction="column"
           align="start"
@@ -18,9 +18,11 @@ export default function Home() {
           <Flex direction="column" align="start" justify="center" gap="2">
             <Heading size="9" className="w-[100%]">
               Ediga-Oya Rays of Hope, Building better{" "}
-              <Text color="brown">futures</Text>
+              <Text color="brown" as="span" className="italic">
+                futures
+              </Text>
             </Heading>
-            <Text className="w-[80%] text-slate-500" size="4">
+            <Text className="w-[80%] text-neutral-500" size="4">
               Join our mission to provide education to the children of
               Egbologba, Nigeria. You can contribute to transforming lives
             </Text>
@@ -32,7 +34,7 @@ export default function Home() {
               </span>
               <Flex direction="column">
                 <Heading size="3">200</Heading>
-                <Text size="2" className="text-slate-500">
+                <Text size="2" className="text-neutral-500">
                   children trained since our inception
                 </Text>
               </Flex>
@@ -43,7 +45,7 @@ export default function Home() {
               </span>
               <Flex direction="column">
                 <Heading size="3">₦ 1 million</Heading>
-                <Text size="2" className="text-slate-500">
+                <Text size="2" className="text-neutral-500">
                   raised by us
                 </Text>
               </Flex>
@@ -54,7 +56,7 @@ export default function Home() {
               </span>
               <Flex direction="column">
                 <Heading size="3">1000's</Heading>
-                <Text size="2" className="text-slate-500">
+                <Text size="2" className="text-neutral-500">
                   more untrained children in the Egbologba area
                 </Text>
               </Flex>
@@ -72,11 +74,12 @@ export default function Home() {
             </span>
           </Link>
         </Flex>
-        <Flex align="center" justify="center" width="50%" className="p-5">
+        <Flex align="center" justify="center" width="50" className="p-5">
           <Image
-            src={todlympics}
+            src={toddlympics}
+            priority
             alt="todlympics 2020"
-            className="w-[90vh] h-full rounded-xl"
+            className="w-[80vh] h-[75vh] rounded-xl"
           />
         </Flex>
       </Flex>

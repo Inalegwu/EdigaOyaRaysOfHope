@@ -23,16 +23,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${grotesque.variable} antialiased font-[family-name:var(--font-bricolage)]`}
-      >
+      <body className={`${grotesque.variable} antialiased font-bricolage`}>
         <Theme
           accentColor="bronze"
           appearance="light"
           grayColor="sand"
           radius="medium"
         >
-          <Flex direction="column" gap="4" width="100%" className="p-10">
+          <Flex
+            direction="column"
+            gap="4"
+            width="100%"
+            className="p-10 bg-neutral-100"
+          >
             <Flex align="center" justify="between" width="100%">
               <Flex align="center" justify="start" gap="5">
                 <Link href="/">
@@ -41,16 +44,25 @@ export default function RootLayout({
                   </Text>
                 </Link>
                 <Flex align="center" justify="end" gap="3">
-                  <Link href="/about" className="text-slate-500">
+                  <Link
+                    href="/about"
+                    className="text-neutral-500 hover:text-neutral-900"
+                  >
                     <Text size="2">About Us</Text>
                   </Link>
                   <Link href="/team" className="text-slate-500">
                     <Text size="2">The Team</Text>
                   </Link>
-                  <Link href="/get-involved" className="text-slate-500">
+                  <Link
+                    href="/get-involved"
+                    className="text-neutral-500 hover:text-neutral-900"
+                  >
                     <Text size="2">Get Involved</Text>
                   </Link>
-                  <Link href="/contact" className="text-slate-500">
+                  <Link
+                    href="/contact"
+                    className="text-neutral-500 hover:text-neutral-900"
+                  >
                     <Text size="2">Contact Us</Text>
                   </Link>
                 </Flex>

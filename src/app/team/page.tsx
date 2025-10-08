@@ -17,7 +17,13 @@ export default function Page() {
         {team.map((member, idx) => (
           <Dialog.Root key={`${member.imageUrl}__${idx}`}>
             <Dialog.Trigger>
-              <Flex gap="2" direction="column" align="center" justify="center">
+              <Flex
+                gap="2"
+                direction="column"
+                align="center"
+                justify="center"
+                className="cursor-pointer"
+              >
                 <Avatar
                   size="6"
                   radius="full"
@@ -40,7 +46,9 @@ export default function Page() {
                   </Dialog.Close>
                 </Flex>
                 <Flex direction="column" align="start" justify="center">
-                  <Heading>About</Heading>
+                  <Dialog.Title>
+                    <Heading>About</Heading>
+                  </Dialog.Title>
                 </Flex>
               </Flex>
             </Dialog.Content>
