@@ -1,6 +1,15 @@
-import { Button, Flex, Text, Theme } from "@radix-ui/themes";
+import { Button, DropdownMenu, Flex, Text, Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRightFromCircle,
+  ChevronsDown,
+  Image,
+  Info,
+  Mail,
+  Menu,
+  User,
+} from "lucide-react";
 import type { Metadata } from "next";
 import local from "next/font/local";
 import Link from "next/link";
@@ -16,6 +25,7 @@ export const metadata: Metadata = {
   description: "Building the Next Generation of Leaders in Egbologba Nigeria",
 };
 
+// TODO: responsiveness
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,7 +53,17 @@ export default function RootLayout({
                     EdigaOyaRaysOfHope
                   </Text>
                 </Link>
-                <Flex align="center" justify="end" gap="3">
+                <Flex
+                  display={{
+                    initial: "none",
+                    md: "flex",
+                    lg: "flex",
+                    xl: "flex",
+                  }}
+                  align="center"
+                  justify="end"
+                  gap="3"
+                >
                   <Link
                     href="/about"
                     className="text-neutral-500 hover:text-green-900"
@@ -55,6 +75,12 @@ export default function RootLayout({
                     className="text-neutral-500 hover:text-green-900"
                   >
                     <Text size="2">The Team</Text>
+                  </Link>
+                  <Link
+                    href="/gallery"
+                    className="text-neutral-500 hover:text-green-900"
+                  >
+                    <Text size="2">Gallery</Text>
                   </Link>
                   <Link
                     href="/get-involved"
@@ -70,24 +96,105 @@ export default function RootLayout({
                   </Link>
                 </Flex>
               </Flex>
-              <Button asChild radius="full" variant="soft">
-                <Link href="/donate">
-                  <Flex align="center" justify="center" gap="2">
-                    <Text size="2">Donate Now</Text>
-                    <ArrowRight size={13} />
-                  </Flex>
-                </Link>
-              </Button>
+              <Flex
+                align="center"
+                justify="end"
+                display={{
+                  initial: "flex",
+                  md: "none",
+                  lg: "none",
+                  xl: "none",
+                }}
+              >
+                <DropdownMenu.Root>
+                  <DropdownMenu.Trigger>
+                    <Button size="2" variant="soft">
+                      <Menu size={13} />
+                    </Button>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Content variant="soft" size="1">
+                    <DropdownMenu.Item asChild>
+                      <Link href="/about">
+                        <Flex gap="2" align="center" justify="start">
+                          <Info size={10} />
+                          <Text size="1">About</Text>
+                        </Flex>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item asChild>
+                      <Link href="/team">
+                        <Flex gap="2" align="center" justify="start">
+                          <User size={10} />
+                          <Text size="1">The Team</Text>
+                        </Flex>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item asChild>
+                      <Link href="/gallery">
+                        <Flex gap="2" align="center" justify="start">
+                          <Image size={10} />
+                          <Text size="1">Gallery</Text>
+                        </Flex>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item asChild>
+                      <Link href="/get-involved">
+                        <Flex gap="2" align="center" justify="start">
+                          <ChevronsDown size={10} />
+                          <Text size="1">Get Involved</Text>
+                        </Flex>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item asChild>
+                      <Link href="/contact">
+                        <Flex gap="2" align="center" justify="start">
+                          <Mail size={10} />
+                          <Text size="1">Contact</Text>
+                        </Flex>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Separator />
+                    <DropdownMenu.Item asChild>
+                      <Link href="/donate">
+                        <Flex align="center" justify="start" gap="3">
+                          <Text size="1">Donate Now</Text>
+                          <ArrowUpRightFromCircle size={10} />
+                        </Flex>
+                      </Link>
+                    </DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu.Root>
+              </Flex>
+              <Flex
+                align="center"
+                justify="end"
+                display={{
+                  initial: "none",
+                  md: "flex",
+                  lg: "flex",
+                  xl: "flex",
+                }}
+              >
+                <Button asChild radius="full" variant="soft">
+                  <Link href="/donate">
+                    <Flex align="center" justify="center" gap="2">
+                      <Text size="2">Donate Now</Text>
+                      <ArrowRight size={13} />
+                    </Flex>
+                  </Link>
+                </Button>
+              </Flex>
             </Flex>
             {children}
             <Flex className="absolute z-10 p-2 bottom-0 left-2" width="50%">
-              <Link
-                className="text-sm text-neutral-400"
-                target="_blank"
-                href="https://ikwueinalegwu.vercel.app"
-              >
-                Designed and Developed by DisgruntledDev
-              </Link>
+              <Text size="1" color="gray">
+                Designed and Developed by
+                <Link className="mx-1" href="https://ikwueinalegwu.vercel.app">
+                  <Text size="1" color="crimson">
+                    DisgruntledDev
+                  </Text>
+                </Link>
+              </Text>
             </Flex>
           </Flex>
         </Theme>

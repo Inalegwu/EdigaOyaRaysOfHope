@@ -4,6 +4,7 @@ declare global {
     description: string;
     role: string;
     imageUrl?: string;
+    slug: string;
   };
 }
 

@@ -10,7 +10,7 @@ export default function Page() {
         justify="between"
         className="bg-white my-10 rounded-2xl border-4 border-solid border-neutral-200 p-10"
       >
-        <Flex width="50%" align="center" justify="start">
+        <Flex direction="column" width="50%" align="center" justify="start">
           <Heading size="7">
             Your donation will help us improve the lives of many children
           </Heading>
@@ -32,7 +32,7 @@ export default function Page() {
               radius="full"
               type="button"
               variant="soft"
-              className="rounded-full py-2 px-3"
+              className="rounded-full py-2 px-3 cursor-pointer"
             >
               <Flex align="center" justify="center" gap="3">
                 <Text size="2">Make Donation</Text>

@@ -28,3 +28,9 @@ body {
 	--em-font-family:var(--font-bricolage);
 	--quote-font-family:var(--font-bricolage);
 }
+
+button{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
