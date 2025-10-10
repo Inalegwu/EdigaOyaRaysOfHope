@@ -1,19 +1,19 @@
-import { team, team_images } from "@/lib/constants";
-import { Dialog, Flex, Heading, Text } from "@radix-ui/themes";
+import { team } from "@/lib/constants";
+import { getInitials } from "@/lib/utils";
+import { Avatar, Dialog, Flex, Heading, Text } from "@radix-ui/themes";
 import { X } from "lucide-react";
-import Image from "next/image";
 
 export default function Page() {
   return (
-    <Flex
-      width="100%"
-      className="h-[79vh]"
-      align="center"
-      justify="center"
-      gap="7"
-      wrap="wrap"
-    >
-      <Flex align="center" justify="center" width="55%" height="100%" gap="6">
+    <Flex width="100%" align="center" justify="center" gap="7" wrap="wrap">
+      <Flex
+        align="center"
+        wrap="wrap"
+        justify="center"
+        width="55%"
+        height="100%"
+        gap="7"
+      >
         {team.map((member, idx) => (
           <Dialog.Root key={`${member.imageUrl}__${idx}`}>
             <Dialog.Trigger>
@@ -24,9 +24,10 @@ export default function Page() {
                 justify="center"
                 className="cursor-pointer"
               >
-                <Image
-                  src={team_images.find((v) => v.slug === member.slug)?.image!}
-                  alt={member.name}
+                <Avatar
+                  src={member.imageUrl}
+                  fallback={getInitials(member.name)}
+                  radius="full"
                 />
                 <Flex direction="column" align="center" justify="center">
                   <Text size="2">{member.name}</Text>
@@ -65,12 +66,10 @@ export default function Page() {
                     align="center"
                     justify="center"
                   >
-                    <Image
-                      src={
-                        team_images.find((v) => v.slug === member.slug)?.image!
-                      }
-                      className="border-4 border-solid border-neutral-200 rounded-full"
-                      alt={member.name}
+                    <Avatar
+                      src={member.imageUrl}
+                      fallback={getInitials(member.name)}
+                      radius="full"
                     />
                   </Flex>
                 </Flex>

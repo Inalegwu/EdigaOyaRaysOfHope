@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .masonry {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .masonry-sm {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .masonry-md {
+    column-gap: 1.5em;
+    column-count: 3;
+  }
+  .break-inside {
+    break-inside: avoid;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,16 +38,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.radix-themes{
-  --default-font-family:var(--font-bricolage);
-  --heading-font-family:var(--font-bricolage);
-	--code-font-family:var(--font-bricolage);
-	--strong-font-family:var(--font-bricolage);
-	--em-font-family:var(--font-bricolage);
-	--quote-font-family:var(--font-bricolage);
+.radix-themes {
+  --default-font-family: var(--font-bricolage);
+  --heading-font-family: var(--font-bricolage);
+  --code-font-family: var(--font-bricolage);
+  --strong-font-family: var(--font-bricolage);
+  --em-font-family: var(--font-bricolage);
+  --quote-font-family: var(--font-bricolage);
 }
 
-button{
+button {
   align-items: center;
   justify-content: center;
   display: flex;

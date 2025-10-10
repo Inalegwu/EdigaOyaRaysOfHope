@@ -42,7 +42,12 @@ export default function RootLayout({
         >
           <Flex
             direction="column"
-            gap="4"
+            gap={{
+              initial: "6",
+              md: "4",
+              lg: "4",
+              xl: "4",
+            }}
             width="100%"
             className="p-10 bg-neutral-50 font-bricolage relative"
           >
@@ -186,7 +191,15 @@ export default function RootLayout({
               </Flex>
             </Flex>
             {children}
-            <Flex className="absolute z-10 p-2 bottom-0 left-2" width="50%">
+            <Flex
+              className="absolute z-10 p-2 bottom-0 left-2"
+              width={{
+                initial: "75%",
+                md: "50%",
+                lg: "50%",
+                xl: "50%",
+              }}
+            >
               <Text size="1" color="gray">
                 Designed and Developed by
                 <Link className="mx-1" href="https://ikwueinalegwu.vercel.app">
