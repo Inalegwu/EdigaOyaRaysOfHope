@@ -3,7 +3,17 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Page() {
   return (
-    <Flex wrap="wrap" direction="column" width="100%" className="h-[78vh]">
+    <Flex
+      wrap="wrap"
+      direction="column"
+      width="100%"
+      height={{
+        initial: "78vh",
+        md: "100%",
+        lg: "100%",
+        xl: "100%",
+      }}
+    >
       <Flex
         width="100%"
         align="center"
@@ -115,6 +125,9 @@ export default function Page() {
         align="center"
         justify="center"
         gap="4"
+        my={{
+          initial: "5",
+        }}
         display={{
           initial: "flex",
           md: "none",
@@ -123,6 +136,32 @@ export default function Page() {
         }}
       >
         <Heading size="7">Place Donation</Heading>
+        <Flex width="100%" gap="4" align="center" justify="center" flexGrow="1">
+          <Flex
+            direction="column"
+            width="50%"
+            height="100%"
+            className="border-2 border-solid border-neutral-200 rounded-lg"
+          >
+            <Flex className="border-b-[1px] p-2 border-b-solid border-b-neutral-200">
+              <Text weight="medium" size="1" color="grass">
+                Monthly Donation
+              </Text>
+            </Flex>
+          </Flex>
+          <Flex
+            direction="column"
+            width="50%"
+            height="100%"
+            className="border-2 border-solid border-neutral-200 rounded-lg"
+          >
+            <Flex className="border-b-[1px] p-2 border-b-solid border-b-neutral-200">
+              <Text weight="medium" size="1" color="grass">
+                One-Time Donation
+              </Text>
+            </Flex>
+          </Flex>
+        </Flex>
       </Flex>
     </Flex>
   );

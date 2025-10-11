@@ -59,3 +59,5 @@ export const team: Team[] = [
     slug: "ina",
   },
 ];
+
+export const timeline: Timeline[] = [];

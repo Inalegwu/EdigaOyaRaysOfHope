@@ -6,6 +6,8 @@ declare global {
     imageUrl?: string;
     slug: string;
   };
+
+  type Timeline = {};
 }
 
 export {};

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "contentlayer build",
+    "content:build":"contentlayer build",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -10,10 +12,13 @@
   },
   "dependencies": {
     "@radix-ui/themes": "^3.2.1",
+    "contentlayer": "^0.3.4",
+    "date-fns": "^4.1.0",
     "effect": "^3.18.4",
     "lucide-react": "^0.545.0",
     "motion": "^11.15.0",
     "next": "15.1.2",
+    "next-contentlayer": "^0.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -28,6 +33,9 @@
   },
   "trustedDependencies": [
     "@biomejs/biome",
+    "contentlayer",
+    "esbuild",
+    "protobufjs",
     "sharp"
   ]
 }
